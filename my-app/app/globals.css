@@ -1,0 +1,215 @@
+@import "tailwindcss";
+
+/* ============================================
+   LIGHT MODE - Default Brand Colors
+   ============================================ */
+:root {
+  /* Brand Colors */
+  --primary: #002c4a;           /* Deep Navy - Brand color (stays consistent in dark mode) */
+  --primary-dark: #001a2e;      /* Darker navy for hover states */
+  --background: #ffffff;        /* White - Default page background */
+  --surface: #f2f3f4;          /* Off-White - Secondary sections, cards, subtle backgrounds */
+  --accent: #3b82f6;           /* Electric Blue - CTAs and interactive elements */
+  
+  /* Text Colors */
+  --foreground: #171717;        /* Primary text color */
+  --muted-foreground: #737373;  /* Secondary/muted text */
+  
+  /* Semantic Colors (derived from brand colors) */
+  --primary-foreground: #ffffff; /* Text on primary background */
+  --accent-foreground: #ffffff;  /* Text on accent background */
+  --surface-foreground: #171717; /* Text on surface background */
+  
+  /* Additional UI Colors */
+  --border: #e5e7eb;            /* Border color */
+  --card: #ffffff;              /* Card background */
+}
+
+/* ============================================
+   TAILWIND THEME - Light Mode Colors
+   ============================================ */
+@theme inline {
+  /* Brand Colors as Tailwind utilities */
+  --color-primary: var(--primary);
+  --color-primary-dark: var(--primary-dark);
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-accent: var(--accent);
+  
+  /* Text Colors */
+  --color-foreground: var(--foreground);
+  --color-muted-foreground: var(--muted-foreground);
+  
+  /* Semantic Colors */
+  --color-primary-foreground: var(--primary-foreground);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-surface-foreground: var(--surface-foreground);
+  
+  /* Additional UI Colors */
+  --color-border: var(--border);
+  --color-card: var(--card);
+  
+  /* Font Configuration */
+  --default-font-family: var(--font-roboto, "Roboto", sans-serif);
+  --font-sans: var(--font-roboto, "Roboto", sans-serif);
+}
+
+/* ============================================
+   DARK MODE - System Preference
+   ============================================ */
+@media (prefers-color-scheme: dark) {
+  :root:not(.light) {
+    /* Dark Mode Brand Colors - Keep brand navy consistent! */
+    --primary: #002c4a;          /* Deep Navy - Same as light mode */
+    --primary-dark: #001a2e;     /* Darker navy for hover states */
+    --background: #020617;       /* Very dark slate, almost black */
+    --surface: #0f172a;         /* Dark slate for cards/sections */
+    --accent: #3b82f6;          /* Keep vibrant blue */
+    
+    /* Dark Mode Text Colors - Improved for better contrast */
+    --foreground: #f5f5f5;       /* Lighter white for primary text */
+    --muted-foreground: #d4d4d4; /* Much lighter gray for secondary text */
+    
+    /* Dark Mode Semantic Colors */
+    --primary-foreground: #ffffff; /* White text on navy background */
+    --accent-foreground: #ffffff;
+    --surface-foreground: #f5f5f5;
+    
+    /* Dark Mode UI Colors */
+    --border: #1e293b;
+    --card: #0f172a;
+  }
+}
+
+/* ============================================
+   DARK MODE - Manual Toggle (.dark class)
+   ============================================ */
+.dark {
+  /* Dark Mode Brand Colors - Keep brand navy consistent! */
+  --primary: #002c4a;
+  --primary-dark: #001a2e;
+  --background: #020617;
+  --surface: #0f172a;
+  --accent: #3b82f6;
+  
+  /* Dark Mode Text Colors - Improved for better contrast */
+  --foreground: #f5f5f5;
+  --muted-foreground: #d4d4d4;
+  
+  /* Dark Mode Semantic Colors */
+  --primary-foreground: #ffffff;
+  --accent-foreground: #ffffff;
+  --surface-foreground: #f5f5f5;
+  
+  /* Dark Mode UI Colors */
+  --border: #1e293b;
+  --card: #0f172a;
+}
+
+/* Dark mode Tailwind theme adjustments */
+@media (prefers-color-scheme: dark) {
+  @theme inline {
+    --color-muted-foreground: #d4d4d4;
+  }
+}
+
+.dark {
+  @theme inline {
+    --color-muted-foreground: #d4d4d4;
+  }
+}
+
+@layer base {
+  /* Modern responsive body typography */
+  body {
+    @apply text-base md:text-lg;
+    @apply text-foreground font-normal;
+  }
+
+  /* Modern Hero heading style */
+  h1 {
+    @apply text-4xl font-extrabold tracking-tight;
+    @apply lg:text-6xl;
+  }
+
+  /* Section header style */
+  h2 {
+    @apply text-3xl font-bold tracking-tight;
+    @apply lg:text-5xl;
+  }
+
+  /* Card/Subsection style */
+  h3 {
+    @apply text-2xl font-semibold;
+    @apply lg:text-3xl;
+  }
+
+  /* Paragraph with improved readability */
+  p {
+    @apply leading-relaxed text-muted-foreground;
+  }
+}
+
+/* ============================================
+   ACCESSIBILITY TOOLS - CSS Support
+   ============================================ */
+
+/* Grayscale Mode */
+.grayscale {
+  filter: grayscale(100%);
+}
+
+/* Underline All Links */
+.underline-links a {
+  text-decoration: underline !important;
+}
+
+/* Pause All Animations */
+.pause-animations *,
+.pause-animations *::before,
+.pause-animations *::after {
+  animation-play-state: paused !important;
+  animation-duration: 0s !important;
+  transition: none !important;
+}
+
+/* High Contrast Mode */
+.high-contrast {
+  /* Force high contrast colors */
+  --background: #000000 !important;
+  --foreground: #ffffff !important;
+  --surface: #1a1a1a !important;
+  --primary: #000000 !important;
+  --accent: #ffff00 !important;
+  --muted-foreground: #ffffff !important;
+}
+
+.high-contrast a {
+  color: #ffff00 !important;
+  text-decoration: underline !important;
+}
+
+.high-contrast button {
+  border: 2px solid #ffffff !important;
+}
+
+.high-contrast input,
+.high-contrast textarea,
+.high-contrast select {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  border: 2px solid #ffffff !important;
+}
+
+/* Ensure high contrast applies to all text elements */
+.high-contrast h1,
+.high-contrast h2,
+.high-contrast h3,
+.high-contrast h4,
+.high-contrast h5,
+.high-contrast h6,
+.high-contrast p,
+.high-contrast span,
+.high-contrast div {
+  color: #ffffff !important;
+}

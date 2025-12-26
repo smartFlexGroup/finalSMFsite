@@ -3,6 +3,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { ChevronRight, Menu } from "lucide-react";
 import MenuTrigger from "./MenuTrigger";
 import MorphingContainer from "./MorphingContainer";
@@ -48,6 +49,10 @@ export default function NavBar() {
     x: 0,
     arrowX: undefined as number | undefined,
   });
+
+  // Get current pathname to determine if we're on home page
+  const pathname = usePathname();
+  const isHome = pathname === "/";
 
   // Store refs to menu trigger buttons
   const triggerRefs = useRef<Record<string, HTMLButtonElement | null>>({});
@@ -153,9 +158,11 @@ export default function NavBar() {
           ref={navRef}
           onMouseLeave={handleMouseLeave}
           className={`relative transition-all duration-300 ${
-            isScrolled
-              ? "bg-primary/95 backdrop-blur-sm shadow-sm"
-              : "bg-transparent"
+            isHome
+              ? isScrolled
+                ? "bg-primary/95 backdrop-blur-sm shadow-sm"
+                : "bg-transparent"
+              : "bg-primary/95 backdrop-blur-sm shadow-sm"
           }`}
         >
           <div className="max-w-7xl mx-auto px-6">
@@ -212,7 +219,7 @@ export default function NavBar() {
 
               {/* Sign in Link */}
               <Link
-                href="/LoginRegister"
+                href="/login"
                 className="flex items-center gap-1 text-sm font-medium text-white hover:text-white/80 transition-colors"
               >
                 Sign in / Register
@@ -221,7 +228,7 @@ export default function NavBar() {
 
               {/* Contact sales Button */}
               <Link
-                href="/contact-sales"
+                href="/contact"
                 className="px-4 py-2 text-sm font-medium text-white bg-primary hover:bg-primary-dark rounded-full transition-colors border border-primary"
               >
                 Contact sales

@@ -541,7 +541,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
               </div>
               
               <Link
-                href="/signin"
+                href="/login"
                 onClick={onClose}
                 className="flex items-center justify-center w-full px-6 py-3 min-h-[48px] text-base font-semibold text-white bg-slate-800 hover:bg-slate-700 rounded-full transition-colors"
               >
@@ -549,7 +549,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                 <ChevronRight className="w-5 h-5 ml-1" />
               </Link>
               <Link
-                href="/contact-sales"
+                href="/contact"
                 onClick={onClose}
                 className="flex items-center justify-center w-full px-6 py-3 min-h-[48px] text-base font-semibold text-white bg-primary hover:bg-primary-dark rounded-full transition-colors"
               >

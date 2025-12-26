@@ -14,7 +14,7 @@ const Footer = () => {
   const { togglePanel } = useAccessibility();
 
   return (
-    <footer className="bg-[#032c48] border-t border-[#04395e] mt-auto">
+    <footer className="bg-[#032c48] border-t border-[#04395e]">
       {/* Main Footer Content */}
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 py-16">

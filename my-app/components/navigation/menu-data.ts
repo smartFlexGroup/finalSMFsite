@@ -32,20 +32,20 @@ export const capabilitiesData = {
   ],
   defaultMicrocopy: "Engineer-reviewed sourcing for fabricated components — from prototype to production.",
   cards: [
-    { title: "CNC Machining", description: "Tight-tolerance parts in metals & plastics.", icon: Cog, tags: ["prototype", "bridge", "production", "tolerance", "complex"] },
-    { title: "Sheet Metal", description: "Laser + bend + hardware for brackets & panels.", icon: Layers, tags: ["prototype", "bridge", "production", "tolerance", "cosmetic", "complex"] },
-    { title: "Additive Mfg", description: "Fast prototypes & complex geometry.", icon: Box, tags: ["prototype"] },
-    { title: "Injection Molding", description: "Repeatable plastic parts & bridge tools.", icon: Factory, tags: ["bridge", "production", "cosmetic"] },
-    { title: "Casting", description: "Cost-effective shapes for low-to-mid volume.", icon: Flame, tags: ["cosmetic"] },
-    { title: "Welding & Joining", description: "Fixtured TIG/MIG for robust assemblies.", icon: Zap, tags: ["complex"] },
-    { title: "Finishing", description: "Anodize, passivate, paint, polish & more.", icon: Paintbrush, tags: ["prototype", "tolerance", "cosmetic"] },
-    { title: "Assembly", description: "Kitting, sub-assemblies, and integration.", icon: Puzzle, tags: ["bridge", "production", "tolerance", "complex"] }
+    { title: "CNC Machining", description: "Tight-tolerance parts in metals & plastics.", icon: Cog, tags: ["prototype", "bridge", "production", "tolerance", "complex"], href: "/capabilities/cnc-machining" },
+    { title: "Sheet Metal", description: "Laser + bend + hardware for brackets & panels.", icon: Layers, tags: ["prototype", "bridge", "production", "tolerance", "cosmetic", "complex"], href: "/capabilities/sheet-metal" },
+    { title: "Additive Mfg", description: "Fast prototypes & complex geometry.", icon: Box, tags: ["prototype"], href: "/capabilities/additive-manufacturing" },
+    { title: "Injection Molding", description: "Repeatable plastic parts & bridge tools.", icon: Factory, tags: ["bridge", "production", "cosmetic"], href: "/capabilities/injection-molding" },
+    { title: "Casting", description: "Cost-effective shapes for low-to-mid volume.", icon: Flame, tags: ["cosmetic"], href: "/capabilities/casting" },
+    { title: "Welding & Joining", description: "Fixtured TIG/MIG for robust assemblies.", icon: Zap, tags: ["complex"], href: "/capabilities/welding-joining" },
+    { title: "Finishing", description: "Anodize, passivate, paint, polish & more.", icon: Paintbrush, tags: ["prototype", "tolerance", "cosmetic"], href: "/capabilities/finishing" },
+    { title: "Assembly", description: "Kitting, sub-assemblies, and integration.", icon: Puzzle, tags: ["bridge", "production", "tolerance", "complex"], href: "/capabilities/assembly" }
   ],
   trustBar: [
-    { title: "Inspection Reports", icon: ClipboardCheck },
-    { title: "Material Certs", icon: FileBadge },
-    { title: "First Article Support", icon: Ruler },
-    { title: "Packaging & Logistics", icon: Truck }
+    { title: "Inspection Reports", icon: ClipboardCheck, href: "/capabilities/inspection-reports" },
+    { title: "Material Certs", icon: FileBadge, href: "/capabilities/material-certs" },
+    { title: "First Article Support", icon: Ruler, href: "/capabilities/first-article-support" },
+    { title: "Packaging & Logistics", icon: Truck, href: "/capabilities/packaging-logistics" }
   ]
 };
 
@@ -56,46 +56,46 @@ export const solutionsData = {
     title: "End-to-End Programs",
     description: "White-glove teams for complex builds — manufacturing + engineering when needed.",
     icon: Workflow,
-    primaryBtn: "Start Your Project",
-    secondaryBtn: "Contact Sales"
+    primaryBtn: { label: "Start Your Project", href: "/start-project" },
+    secondaryBtn: { label: "Contact Sales", href: "/contact" }
   },
   columns: [
     {
       title: "PROGRAMS",
       items: [
-        { title: "Design-to-Manufacture", icon: Compass },
-        { title: "New Product Introduction", icon: Rocket },
-        { title: "Turnkey Contract Manufacturing", icon: Factory },
-        { title: "Supply Chain Management", icon: Network }
+        { title: "Design-to-Manufacture", icon: Compass, href: "/solutions/design-to-manufacture" },
+        { title: "New Product Introduction", icon: Rocket, href: "/solutions/new-product-introduction" },
+        { title: "Turnkey Contract Manufacturing", icon: Factory, href: "/solutions/turnkey-contract-manufacturing" },
+        { title: "Supply Chain Management", icon: Network, href: "/solutions/supply-chain-management" }
       ]
     },
     {
       title: "ENGINEERING & DEV",
       items: [
-        { title: "Medical Device Dev", icon: Stethoscope },
-        { title: "Biotech Instrument Dev", icon: Microscope },
-        { title: "Custom Automation", icon: Bot },
-        { title: "Commercial Product Dev", icon: Package },
-        { title: "Software Dev", icon: Code }
+        { title: "Medical Device Dev", icon: Stethoscope, href: "/solutions/medical-device-development" },
+        { title: "Biotech Instrument Dev", icon: Microscope, href: "/solutions/biotech-instrument-development" },
+        { title: "Custom Automation", icon: Bot, href: "/solutions/custom-automation" },
+        { title: "Commercial Product Dev", icon: Package, href: "/solutions/commercial-product-development" },
+        { title: "Software Dev", icon: Code, href: "/solutions/software-development" }
       ]
     },
     {
       title: "MARKETS WE SUPPORT",
       items: [
-        { title: "Healthcare & Life Sciences", icon: HeartPulse },
-        { title: "Aerospace & Defense", icon: Plane },
-        { title: "Industrial Equipment", icon: Anvil },
-        { title: "Automotive & Mobility", icon: Car },
-        { title: "Tech & Infrastructure", icon: Server }
+        { title: "Healthcare & Life Sciences", icon: HeartPulse, href: "/solutions/healthcare-life-sciences" },
+        { title: "Aerospace & Defense", icon: Plane, href: "/solutions/aerospace-defense" },
+        { title: "Industrial Equipment", icon: Anvil, href: "/solutions/industrial-equipment" },
+        { title: "Automotive & Mobility", icon: Car, href: "/solutions/automotive-mobility" },
+        { title: "Tech & Infrastructure", icon: Server, href: "/solutions/tech-infrastructure" }
       ]
     }
   ],
   footer: [
-    "Prototyping",
-    "Mechanical Engineering",
-    "CAD Drafting",
-    "Reverse Engineering",
-    "Manufacturing Documentation"
+    { title: "Prototyping", href: "/solutions/prototyping" },
+    { title: "Mechanical Engineering", href: "/solutions/mechanical-engineering" },
+    { title: "CAD Drafting", href: "/solutions/cad-drafting" },
+    { title: "Reverse Engineering", href: "/solutions/reverse-engineering" },
+    { title: "Manufacturing Documentation", href: "/solutions/manufacturing-documentation" }
   ]
 };
 
@@ -106,35 +106,35 @@ export const howWeDeliverData = {
     title: "White-Glove Delivery",
     description: "One team manages your RFQ end-to-end — from review to a final Smart Flex quote.",
     icon: PackageCheck,
-    primaryBtn: "Start an RFQ",
-    secondaryBtn: "Talk to an Engineer"
+    primaryBtn: { label: "Start an RFQ", href: "/start-rfq" },
+    secondaryBtn: { label: "Talk to an Engineer", href: "/talk-to-engineer" }
   },
   columns: [
     {
       title: "THE PROCESS",
       items: [
-        "Submit an RFQ",
-        "Engineering Review",
-        "IP Protection",
-        "Supplier Sourcing",
-        "Quote Comparison",
-        "Final Proposal"
+        { label: "Submit an RFQ", href: "/how-we-deliver/process#submit" },
+        { label: "Engineering Review", href: "/how-we-deliver/process#review" },
+        { label: "IP Protection", href: "/how-we-deliver/process#ip-protection" },
+        { label: "Supplier Sourcing", href: "/how-we-deliver/process#sourcing" },
+        { label: "Quote Comparison", href: "/how-we-deliver/process#quote-comparison" },
+        { label: "Final Proposal", href: "/how-we-deliver/process#proposal" }
       ]
     },
     {
       title: "WHAT YOU GET",
       items: [
-        "Tracking Number + Updates",
-        "One Ready-to-Approve Quote",
-        "Accept / Decline in Portal"
+        { label: "Tracking Number + Updates", href: "/how-we-deliver/what-you-get" },
+        { label: "One Ready-to-Approve Quote", href: "/how-we-deliver/what-you-get" },
+        { label: "Accept / Decline in Portal", href: "/how-we-deliver/what-you-get" }
       ]
     },
     {
       title: "COMPLEX PROJECTS",
       items: [
-        "Design-to-Manufacture Support",
-        "Prototyping Support",
-        "Supply Chain Management"
+        { label: "Design-to-Manufacture Support", href: "/solutions/design-to-manufacture" },
+        { label: "Prototyping Support", href: "/solutions/prototyping" },
+        { label: "Supply Chain Management", href: "/solutions/supply-chain-management" }
       ]
     }
   ]
@@ -149,43 +149,43 @@ export const resourcesData = {
     sub: "AI-powered answers from our engineering library.",
     placeholder: "Ask about ISO 13485, FDA 820...",
     chips: ["RFQ Checklist", "Tolerances", "MedTech Regs"],
-    action: "Try AI Assistant"
+    action: { label: "Try AI Assistant", href: "/ai-assistant" }
   },
   columns: [
     {
       title: "LEARN",
       items: [
-        { title: "DFM Guides", icon: "BookOpen" },
-        { title: "Tolerances & GD&T", icon: "Ruler" },
-        { title: "Materials Library", icon: "Layers" },
-        { title: "Finishes & Coatings", icon: "Palette" },
-        { title: "Quality Docs Explained", icon: "FileCheck" },
-        { title: "Regulatory (MedTech)", icon: "FileCheck" }
+        { title: "DFM Guides", icon: "BookOpen", href: "/resources/dfm-guides" },
+        { title: "Tolerances & GD&T", icon: "Ruler", href: "/resources/tolerances-gdt" },
+        { title: "Materials Library", icon: "Layers", href: "/resources/materials" },
+        { title: "Finishes & Coatings", icon: "Palette", href: "/resources/finishes-coatings" },
+        { title: "Quality Docs Explained", icon: "FileCheck", href: "/resources/quality-docs" },
+        { title: "Regulatory (MedTech)", icon: "FileCheck", href: "/resources/regulatory-medtech" }
       ]
     },
     {
       title: "REFERENCE",
       items: [
-        { title: "RFQ Checklist", icon: "ClipboardCheck" },
-        { title: "Mold Design Guide", icon: "Component" },
-        { title: "Sheet Metal Rules", icon: "FoldVertical" },
-        { title: "Hardware Standards", icon: "Ruler" }
+        { title: "RFQ Checklist", icon: "ClipboardCheck", href: "/resources/rfq-checklist" },
+        { title: "Mold Design Guide", icon: "Component", href: "/resources/mold-design-guide" },
+        { title: "Sheet Metal Rules", icon: "FoldVertical", href: "/resources/sheet-metal-rules" },
+        { title: "Hardware Standards", icon: "Ruler", href: "/resources/hardware-standards" }
       ]
     },
     {
       title: "EXPLORE",
       items: [
-        { title: "Customer Stories", icon: "Users" },
-        { title: "Sample Deliverables", icon: "FileBox" },
-        { title: "Webinars & Events", icon: "Video" },
-        { title: "Blog / Insights", icon: "Newspaper" }
+        { title: "Customer Stories", icon: "Users", href: "/resources/customer-stories" },
+        { title: "Sample Deliverables", icon: "FileBox", href: "/resources/sample-deliverables" },
+        { title: "Webinars & Events", icon: "Video", href: "/resources/webinars-events" },
+        { title: "Blog / Insights", icon: "Newspaper", href: "/resources/blog" }
       ]
     }
   ],
   footer: [
-    { title: "Talk to an Engineer", icon: "MessageCircle" },
-    { title: "Support Center", icon: "LifeBuoy" },
-    { title: "Contact Sales", icon: "Mail" }
+    { title: "Talk to an Engineer", icon: "MessageCircle", href: "/talk-to-engineer" },
+    { title: "Support Center", icon: "LifeBuoy", href: "/support" },
+    { title: "Contact Sales", icon: "Mail", href: "/contact" }
   ]
 };
 
@@ -196,31 +196,40 @@ export const joinNetworkData = {
     title: "Fill Your Capacity. Expand Your Reach.",
     subhead: "We bring the sales to you. No bidding wars, just vetted, high-value programs delivered to your portal.",
     video: "/videos/smartflexgrouphomevideo.mp4",
-    primaryBtn: "Apply to Join",
-    secondaryBtn: "Partner Stories"
+    primaryBtn: { label: "Apply to Join", href: "/join-network/apply" },
+    secondaryBtn: { label: "Partner Stories", href: "/join-network/partner-stories" }
   },
   columns: [
     {
       title: "FOR MANUFACTURERS",
       icon: Factory,
-      items: ["Machine Shop Partners", "Contract Manufacturers", "Material Suppliers", "Quality Standards"]
+      items: [
+        { label: "Machine Shop Partners", href: "/join-network/manufacturers/machine-shops" },
+        { label: "Contract Manufacturers", href: "/join-network/manufacturers/contract-manufacturing" },
+        { label: "Material Suppliers", href: "/join-network/manufacturers/material-suppliers" },
+        { label: "Quality Standards", href: "/join-network/quality-standards" }
+      ]
     },
     {
       title: "FOR ENGINEERS",
       icon: DraftingCompass,
-      items: ["Design & Engineering Firms", "Specialized Consultants", "Collaborative Programs"]
+      items: [
+        { label: "Design & Engineering Firms", href: "/join-network/engineers/design-firms" },
+        { label: "Specialized Consultants", href: "/join-network/engineers/consultants" },
+        { label: "Collaborative Programs", href: "/join-network/engineers/collaborative-programs" }
+      ]
     }
   ],
   referralBanner: {
     title: "The Referral Partner Program",
     description: "Monetize your network. Earn commissions on every project you bring to Smart Flex.",
-    cta: "Start Earning",
+    cta: { label: "Start Earning", href: "/join-network/referral-program" },
     icon: HandCoins
   },
   footer: [
-    { title: "Partner Portal Login", icon: LogIn },
-    { title: "Onboarding Guide", icon: FileText },
-    { title: "Supplier Code of Conduct", icon: ShieldCheck }
+    { title: "Partner Portal Login", icon: LogIn, href: "/login" },
+    { title: "Onboarding Guide", icon: FileText, href: "/join-network/onboarding-guide" },
+    { title: "Supplier Code of Conduct", icon: ShieldCheck, href: "/join-network/code-of-conduct" }
   ]
 };
 

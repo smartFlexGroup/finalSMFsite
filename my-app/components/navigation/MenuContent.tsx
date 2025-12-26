@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Link from "next/link";
 import { LucideIcon, Sparkles, Search, BookOpen, Ruler, Layers, Palette, FileCheck, ClipboardCheck, Component, FoldVertical, Users, FileBox, Video, Newspaper, LifeBuoy, MessageCircle, Mail, Factory, DraftingCompass, HandCoins, ShieldCheck, FileText, LogIn, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -110,24 +111,28 @@ export default function MenuContent({ data }: MenuContentProps) {
                     key={card.title}
                     layout
                     transition={{ duration: 0.3 }}
-                    className={`bg-white dark:bg-slate-800 p-4 rounded-lg border border-gray-200 dark:border-slate-700 hover:border-primary dark:hover:border-primary transition-all cursor-pointer ${
-                      isMatching ? "opacity-100" : "opacity-50"
-                    }`}
                   >
-                    <div className="flex items-start gap-3">
-                      <Icon
-                        size={24}
-                        className="text-primary shrink-0 mt-0.5"
-                      />
-                      <div>
-                        <h4 className="text-sm font-semibold text-gray-900 dark:text-white mb-1">
-                          {card.title}
-                        </h4>
-                        <p className="text-xs text-gray-600 dark:text-gray-400">
-                          {card.description}
-                        </p>
+                    <Link
+                      href={card.href || "#"}
+                      className={`block bg-white dark:bg-slate-800 p-4 rounded-lg border border-gray-200 dark:border-slate-700 hover:border-primary dark:hover:border-primary transition-all ${
+                        isMatching ? "opacity-100" : "opacity-50"
+                      }`}
+                    >
+                      <div className="flex items-start gap-3">
+                        <Icon
+                          size={24}
+                          className="text-primary shrink-0 mt-0.5"
+                        />
+                        <div>
+                          <h4 className="text-sm font-semibold text-gray-900 dark:text-white mb-1">
+                            {card.title}
+                          </h4>
+                          <p className="text-xs text-gray-600 dark:text-gray-400">
+                            {card.description}
+                          </p>
+                        </div>
                       </div>
-                    </div>
+                    </Link>
                   </motion.div>
                 );
               })}
@@ -139,9 +144,10 @@ export default function MenuContent({ data }: MenuContentProps) {
             {data.trustBar.map((item: any, idx: number) => {
               const Icon: LucideIcon = item.icon;
               return (
-                <div
+                <Link
                   key={idx}
-                  className="flex items-center gap-2 group cursor-pointer"
+                  href={item.href || "#"}
+                  className="flex items-center gap-2 group hover:bg-gray-50 dark:hover:bg-slate-800 px-2 py-1.5 rounded-md transition-all"
                 >
                   <Icon
                     size={18}
@@ -150,7 +156,7 @@ export default function MenuContent({ data }: MenuContentProps) {
                   <span className="text-xs font-medium text-gray-700 dark:text-gray-300 group-hover:text-gray-900 dark:group-hover:text-white transition-colors">
                     {item.title}
                   </span>
-                </div>
+                </Link>
               );
             })}
           </div>
@@ -185,23 +191,23 @@ export default function MenuContent({ data }: MenuContentProps) {
               {(data.featured.primaryBtn || data.featured.secondaryBtn) && (
                 <div className="flex items-center gap-4">
                   {data.featured.primaryBtn && (
-                    <a
-                      href="#"
+                    <Link
+                      href={typeof data.featured.primaryBtn === 'object' ? data.featured.primaryBtn.href : "#"}
                       className="px-4 py-2 text-sm font-medium text-white bg-violet-600 hover:bg-violet-700 rounded-md transition-colors"
                     >
-                      {data.featured.primaryBtn}
-                    </a>
+                      {typeof data.featured.primaryBtn === 'object' ? data.featured.primaryBtn.label : data.featured.primaryBtn}
+                    </Link>
                   )}
                   {data.featured.secondaryBtn && (
-                    <a
-                      href="#"
+                    <Link
+                      href={typeof data.featured.secondaryBtn === 'object' ? data.featured.secondaryBtn.href : "#"}
                       className="flex items-center gap-1 text-sm font-medium text-violet-600 dark:text-violet-400 hover:text-violet-700 dark:hover:text-violet-300 transition-colors"
                     >
-                      {data.featured.secondaryBtn}
+                      {typeof data.featured.secondaryBtn === 'object' ? data.featured.secondaryBtn.label : data.featured.secondaryBtn}
                       <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                       </svg>
-                    </a>
+                    </Link>
                   )}
                 </div>
               )}
@@ -220,8 +226,9 @@ export default function MenuContent({ data }: MenuContentProps) {
                 {column.items.map((item: any, itemIdx: number) => {
                   const Icon: LucideIcon = item.icon;
                   return (
-                    <div
+                    <Link
                       key={itemIdx}
+                      href={item.href || "#"}
                       className="flex items-center gap-3 group cursor-pointer"
                     >
                       <Icon
@@ -231,7 +238,7 @@ export default function MenuContent({ data }: MenuContentProps) {
                       <div className="text-sm text-gray-900 dark:text-white group-hover:text-violet-600 dark:group-hover:text-violet-400 transition-colors">
                         {item.title}
                       </div>
-                    </div>
+                    </Link>
                   );
                 })}
               </div>
@@ -246,14 +253,14 @@ export default function MenuContent({ data }: MenuContentProps) {
               COMPLEMENTARY CAPABILITIES
             </h3>
             <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
-              {data.footer.map((item: string, idx: number) => (
+              {data.footer.map((item: any, idx: number) => (
                 <React.Fragment key={idx}>
-                  <a
-                    href="#"
+                  <Link
+                    href={typeof item === 'object' ? item.href : "#"}
                     className="text-sm text-gray-700 dark:text-gray-300 hover:text-violet-600 dark:hover:text-violet-400 cursor-pointer transition-colors"
                   >
-                    {item}
-                  </a>
+                    {typeof item === 'object' ? item.title : item}
+                  </Link>
                   {idx < data.footer.length - 1 && (
                     <span className="text-gray-400 dark:text-gray-600">•</span>
                   )}
@@ -292,23 +299,23 @@ export default function MenuContent({ data }: MenuContentProps) {
               {(data.featured.primaryBtn || data.featured.secondaryBtn) && (
                 <div className="flex items-center gap-4">
                   {data.featured.primaryBtn && (
-                    <a
-                      href="#"
+                    <Link
+                      href={typeof data.featured.primaryBtn === 'object' ? data.featured.primaryBtn.href : "#"}
                       className="px-4 py-2 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-md transition-colors"
                     >
-                      {data.featured.primaryBtn}
-                    </a>
+                      {typeof data.featured.primaryBtn === 'object' ? data.featured.primaryBtn.label : data.featured.primaryBtn}
+                    </Link>
                   )}
                   {data.featured.secondaryBtn && (
-                    <a
-                      href="#"
+                    <Link
+                      href={typeof data.featured.secondaryBtn === 'object' ? data.featured.secondaryBtn.href : "#"}
                       className="flex items-center gap-1 text-sm font-medium text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors"
                     >
-                      {data.featured.secondaryBtn}
+                      {typeof data.featured.secondaryBtn === 'object' ? data.featured.secondaryBtn.label : data.featured.secondaryBtn}
                       <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                       </svg>
-                    </a>
+                    </Link>
                   )}
                 </div>
               )}
@@ -324,14 +331,14 @@ export default function MenuContent({ data }: MenuContentProps) {
                 {column.title}
               </h3>
               <div className="space-y-2">
-                {column.items.map((item: string, itemIdx: number) => (
-                  <a
+                {column.items.map((item: any, itemIdx: number) => (
+                  <Link
                     key={itemIdx}
-                    href="#"
+                    href={typeof item === 'object' ? item.href : "#"}
                     className="block text-sm text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 cursor-pointer transition-colors"
                   >
-                    {item}
-                  </a>
+                    {typeof item === 'object' ? item.label : item}
+                  </Link>
                 ))}
               </div>
             </div>
@@ -421,10 +428,13 @@ export default function MenuContent({ data }: MenuContentProps) {
             </div>
 
             {/* Try AI Assistant Button */}
-            <button className="mt-auto flex items-center justify-center gap-2 px-4 py-2.5 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold rounded-lg transition-colors">
+            <Link 
+              href={typeof data.aiPanel.action === 'object' ? data.aiPanel.action.href : "#"}
+              className="mt-auto flex items-center justify-center gap-2 px-4 py-2.5 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold rounded-lg transition-colors"
+            >
               <Sparkles className="w-4 h-4" />
-              {data.aiPanel.action}
-            </button>
+              {typeof data.aiPanel.action === 'object' ? data.aiPanel.action.label : data.aiPanel.action}
+            </Link>
           </div>
 
           {/* Right Col - 3 Column Links Grid */}
@@ -439,9 +449,9 @@ export default function MenuContent({ data }: MenuContentProps) {
                     {column.items.map((item: any, itemIdx: number) => {
                       const Icon: LucideIcon = iconMap[item.icon];
                       return (
-                        <a
+                        <Link
                           key={itemIdx}
-                          href="#"
+                          href={item.href || "#"}
                           className="flex items-start gap-2 group cursor-pointer"
                         >
                           {Icon && (
@@ -453,7 +463,7 @@ export default function MenuContent({ data }: MenuContentProps) {
                           <span className="text-sm text-gray-900 dark:text-white group-hover:text-primary dark:group-hover:text-primary transition-colors">
                             {item.title}
                           </span>
-                        </a>
+                        </Link>
                       );
                     })}
                   </div>
@@ -466,9 +476,9 @@ export default function MenuContent({ data }: MenuContentProps) {
               {data.footer.map((item: any, idx: number) => {
                 const Icon: LucideIcon = iconMap[item.icon];
                 return (
-                  <a
+                  <Link
                     key={idx}
-                    href="#"
+                    href={item.href || "#"}
                     className="flex items-center gap-2 group cursor-pointer"
                   >
                     {Icon && (
@@ -480,7 +490,7 @@ export default function MenuContent({ data }: MenuContentProps) {
                     <span className="text-sm font-medium text-gray-700 dark:text-gray-300 group-hover:text-gray-900 dark:group-hover:text-white transition-colors">
                       {item.title}
                     </span>
-                  </a>
+                  </Link>
                 );
               })}
             </div>
@@ -514,18 +524,18 @@ export default function MenuContent({ data }: MenuContentProps) {
               {data.hero.subhead}
             </p>
             <div className="flex items-center gap-3">
-              <a
-                href="#"
+              <Link
+                href={typeof data.hero.primaryBtn === 'object' ? data.hero.primaryBtn.href : "#"}
                 className="px-5 py-2.5 text-sm font-semibold text-white bg-primary hover:bg-primary-dark rounded-md transition-colors"
               >
-                {data.hero.primaryBtn}
-              </a>
-              <a
-                href="#"
+                {typeof data.hero.primaryBtn === 'object' ? data.hero.primaryBtn.label : data.hero.primaryBtn}
+              </Link>
+              <Link
+                href={typeof data.hero.secondaryBtn === 'object' ? data.hero.secondaryBtn.href : "#"}
                 className="px-5 py-2.5 text-sm font-semibold text-white border border-white/30 hover:bg-white/10 rounded-md transition-colors"
               >
-                {data.hero.secondaryBtn}
-              </a>
+                {typeof data.hero.secondaryBtn === 'object' ? data.hero.secondaryBtn.label : data.hero.secondaryBtn}
+              </Link>
             </div>
           </div>
         </div>
@@ -545,14 +555,14 @@ export default function MenuContent({ data }: MenuContentProps) {
                     </h3>
                   </div>
                   <div className="space-y-2">
-                    {column.items.map((item: string, itemIdx: number) => (
-                      <a
+                    {column.items.map((item: any, itemIdx: number) => (
+                      <Link
                         key={itemIdx}
-                        href="#"
+                        href={typeof item === 'object' ? item.href : "#"}
                         className="block text-sm text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors"
                       >
-                        {item}
-                      </a>
+                        {typeof item === 'object' ? item.label : item}
+                      </Link>
                     ))}
                   </div>
                 </div>
@@ -576,13 +586,13 @@ export default function MenuContent({ data }: MenuContentProps) {
                 <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">
                   {data.referralBanner.description}
                 </p>
-                <a
-                  href="#"
+                <Link
+                  href={typeof data.referralBanner.cta === 'object' ? data.referralBanner.cta.href : "#"}
                   className="inline-flex items-center gap-1 text-sm font-medium text-amber-600 dark:text-amber-400 hover:text-amber-700 dark:hover:text-amber-300 transition-colors"
                 >
-                  {data.referralBanner.cta}
+                  {typeof data.referralBanner.cta === 'object' ? data.referralBanner.cta.label : data.referralBanner.cta}
                   <ArrowRight className="w-4 h-4" />
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -592,9 +602,9 @@ export default function MenuContent({ data }: MenuContentProps) {
             {data.footer.map((item: any, idx: number) => {
               const Icon: LucideIcon = item.icon;
               return (
-                <a
+                <Link
                   key={idx}
-                  href="#"
+                  href={item.href || "#"}
                   className="flex items-center gap-2 group cursor-pointer"
                 >
                   <Icon
@@ -604,7 +614,7 @@ export default function MenuContent({ data }: MenuContentProps) {
                   <span className="text-xs font-medium text-gray-700 dark:text-gray-300 group-hover:text-gray-900 dark:group-hover:text-white transition-colors">
                     {item.title}
                   </span>
-                </a>
+                </Link>
               );
             })}
           </div>

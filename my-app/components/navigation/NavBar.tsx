@@ -208,6 +208,15 @@ export default function NavBar() {
               {/* Divider */}
               <div className="h-6 w-px bg-white/20 transition-colors" />
               
+              {/* About Link */}
+              <Link
+                href="/about"
+                className="flex items-center gap-1 text-sm font-medium text-white hover:text-white/80 transition-colors"
+              >
+                About
+                <ChevronRight className="w-4 h-4" />
+              </Link>
+              
               {/* Support Link */}
               <Link
                 href="/support"

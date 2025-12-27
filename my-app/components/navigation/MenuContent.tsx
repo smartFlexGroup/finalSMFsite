@@ -60,16 +60,16 @@ export default function MenuContent({ data }: MenuContentProps) {
             </p>
             <div className="flex items-center gap-3">
               <a
-                href="#"
+                href={typeof data.hero.primaryBtn === 'object' ? data.hero.primaryBtn.href : "#"}
                 className="px-5 py-2.5 text-sm font-semibold text-white bg-primary hover:bg-primary-dark rounded-md transition-colors"
               >
-                {data.hero.primaryBtn}
+                {typeof data.hero.primaryBtn === 'object' ? data.hero.primaryBtn.label : data.hero.primaryBtn}
               </a>
               <a
-                href="#"
+                href={typeof data.hero.secondaryBtn === 'object' ? data.hero.secondaryBtn.href : "#"}
                 className="px-5 py-2.5 text-sm font-semibold text-white border border-white/30 hover:bg-white/10 rounded-md transition-colors"
               >
-                {data.hero.secondaryBtn}
+                {typeof data.hero.secondaryBtn === 'object' ? data.hero.secondaryBtn.label : data.hero.secondaryBtn}
               </a>
             </div>
           </div>

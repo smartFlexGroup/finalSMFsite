@@ -112,11 +112,11 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                                   {item.data.hero.title}
                                 </h3>
                                 <Link
-                                  href="#"
+                                  href={typeof item.data.hero.primaryBtn === 'object' ? item.data.hero.primaryBtn.href : "#"}
                                   onClick={onClose}
                                   className="inline-block px-4 py-2 text-sm font-semibold text-white bg-primary hover:bg-primary-dark rounded-md transition-colors"
                                 >
-                                  {item.data.hero.primaryBtn}
+                                  {typeof item.data.hero.primaryBtn === 'object' ? item.data.hero.primaryBtn.label : item.data.hero.primaryBtn}
                                 </Link>
                               </div>
 
@@ -240,14 +240,14 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                                   <div className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3">
                                     COMPLEMENTARY CAPABILITIES
                                   </div>
-                                  {item.data.footer.map((footerItem: string, footerIdx: number) => (
+                                  {item.data.footer.map((footerItem: any, footerIdx: number) => (
                                     <Link
                                       key={footerIdx}
-                                      href="#"
+                                      href={typeof footerItem === 'object' ? footerItem.href : "#"}
                                       onClick={onClose}
                                       className="block py-2 text-sm font-medium text-slate-200 hover:text-violet-400 transition-colors"
                                     >
-                                      {footerItem}
+                                      {typeof footerItem === 'object' ? footerItem.title : footerItem}
                                     </Link>
                                   ))}
                                 </div>
@@ -284,14 +284,14 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                                   <div className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2 px-3">
                                     {col.title}
                                   </div>
-                                  {col.items.map((subItem: string, subIdx: number) => (
+                                  {col.items.map((subItem: any, subIdx: number) => (
                                     <Link
                                       key={subIdx}
-                                      href="#"
+                                      href={typeof subItem === 'object' ? subItem.href : "#"}
                                       onClick={onClose}
                                       className="block px-3 py-3 min-h-[48px] text-base font-medium text-white hover:bg-slate-800 rounded-lg transition-colors"
                                     >
-                                      {subItem}
+                                      {typeof subItem === 'object' ? subItem.label : subItem}
                                     </Link>
                                   ))}
                                 </div>
@@ -415,11 +415,11 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                                   {item.data.hero.subhead}
                                 </p>
                                 <Link
-                                  href="#"
+                                  href={typeof item.data.hero.primaryBtn === 'object' ? item.data.hero.primaryBtn.href : "#"}
                                   onClick={onClose}
                                   className="inline-block px-4 py-2 text-sm font-semibold text-white bg-primary hover:bg-primary-dark rounded-md transition-colors"
                                 >
-                                  {item.data.hero.primaryBtn}
+                                  {typeof item.data.hero.primaryBtn === 'object' ? item.data.hero.primaryBtn.label : item.data.hero.primaryBtn}
                                 </Link>
                               </div>
 
@@ -434,14 +434,14 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                                         {column.title}
                                       </div>
                                     </div>
-                                    {column.items.map((subItem: string, subIdx: number) => (
+                                    {column.items.map((subItem: any, subIdx: number) => (
                                       <Link
                                         key={subIdx}
-                                        href="#"
+                                        href={typeof subItem === 'object' ? subItem.href : "#"}
                                         onClick={onClose}
                                         className="block px-3 py-3 min-h-[48px] text-base font-medium text-white hover:bg-slate-800 rounded-lg transition-colors"
                                       >
-                                        {subItem}
+                                        {typeof subItem === 'object' ? subItem.label : subItem}
                                       </Link>
                                     ))}
                                   </div>
@@ -505,14 +505,14 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                 </div>
               ))}
 
-              {/* Pricing Link */}
+              {/* About Link */}
               <Link
-                href="/pricing"
+                href="/about"
                 onClick={onClose}
                 className="flex items-center justify-between py-5 min-h-[48px] border-b border-slate-700"
               >
                 <span className="text-lg font-semibold text-white">
-                  Pricing
+                  About
                 </span>
                 <ChevronRight className="w-5 h-5 text-white/60" />
               </Link>

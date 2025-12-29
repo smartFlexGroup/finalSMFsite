@@ -2,6 +2,7 @@ import Hero from "@/components/sections/Hero";
 import TrustSignals from "@/components/sections/TrustSignals";
 import CapabilitiesGrid from "@/components/sections/CapabilitiesGrid";
 import CtaBand from "@/components/sections/CtaBand";
+import IndustryShowcase from "@/components/sections/IndustryShowcase";
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
       <TrustSignals />
       <CapabilitiesGrid />
       <CtaBand />
+      <IndustryShowcase />
       
       {/* Additional sections can be added below */}
       <div className="max-w-7xl mx-auto px-4 py-16">

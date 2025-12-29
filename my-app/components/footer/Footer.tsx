@@ -43,17 +43,17 @@ const Footer = () => {
             </p>
 
             {/* Contact Info */}
-            <div className="space-y-2 text-sm text-gray-300">
-              <p className="font-medium text-white">
+            <div className="space-y-2 text-sm">
+              <p className="font-medium text-white !text-white">
                 {contactInfo.address}
               </p>
-              <p>
-                Phone: <a href={`tel:${contactInfo.phone}`} className="hover:text-accent transition-colors">
+              <p className="font-medium text-gray-200">
+                Phone: <a href={`tel:${contactInfo.phone}`} className="text-gray-200 hover:text-accent transition-colors">
                   {contactInfo.phone}
                 </a>
               </p>
-              <p>
-                Email: <a href={`mailto:${contactInfo.email}`} className="hover:text-accent transition-colors">
+              <p className="font-medium text-gray-200">
+                Email: <a href={`mailto:${contactInfo.email}`} className="text-gray-200 hover:text-accent transition-colors">
                   {contactInfo.email}
                 </a>
               </p>

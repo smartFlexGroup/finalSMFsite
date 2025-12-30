@@ -1,8 +1,18 @@
+import AboutHero from '@/components/sections/about/AboutHero';
+import MissionReveal from '@/components/sections/about/MissionReveal';
+import GlobalFootprint from '@/components/sections/about/GlobalFootprint';
+import TeamShowcase from '@/components/sections/about/TeamShowcase';
+import ValuesBento from '@/components/sections/about/ValuesBento';
+
 export default function AboutPage() {
   return (
-    <div className="pt-32 text-center">
-      <h1 className="text-4xl font-bold">About Us</h1>
-    </div>
+    <>
+      <AboutHero />
+      <MissionReveal />
+      <GlobalFootprint />
+      <TeamShowcase />
+      <ValuesBento />
+    </>
   );
 }
 

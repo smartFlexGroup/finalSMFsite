@@ -1,7 +1,11 @@
+import CapabilitiesTemplate from "@/components/capabilities/CapabilitiesTemplate";
+import { additiveData } from "@/components/capabilities/capabilities-data";
+
+export const metadata = {
+  title: "Additive Manufacturing & 3D Printing | SmartFlex Group",
+  description: "Industrial 3D printing (SLA, SLS, FDM, DMLS) for rapid prototyping. Parts in 24 hours.",
+};
+
 export default function AdditiveManufacturingPage() {
-  return (
-    <div className="py-32 text-center">
-      <h1 className="text-5xl font-bold text-primary">Additive Manufacturing</h1>
-    </div>
-  );
+  return <CapabilitiesTemplate data={additiveData} />;
 }

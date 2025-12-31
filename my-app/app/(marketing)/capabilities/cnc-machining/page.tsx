@@ -1,7 +1,11 @@
+import CapabilitiesTemplate from "@/components/capabilities/CapabilitiesTemplate";
+import { cncMachiningData } from "@/components/capabilities/capabilities-data";
+
+export const metadata = {
+  title: "CNC Machining Services | SmartFlex Group",
+  description: "Precision 3, 4, and 5-axis CNC machining for complex geometries in metal and plastic. Get parts in as fast as 3 days.",
+};
+
 export default function CNCMachiningPage() {
-  return (
-    <div className="py-32 text-center">
-      <h1 className="text-5xl font-bold text-primary">CNC Machining</h1>
-    </div>
-  );
+  return <CapabilitiesTemplate data={cncMachiningData} />;
 }

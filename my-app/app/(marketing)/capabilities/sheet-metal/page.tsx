@@ -1,7 +1,11 @@
+import CapabilitiesTemplate from "@/components/capabilities/CapabilitiesTemplate";
+import { sheetMetalData } from "@/components/capabilities/capabilities-data";
+
+export const metadata = {
+  title: "Sheet Metal Fabrication Services | SmartFlex Group",
+  description: "Laser cutting, bending, and punching for enclosures and brackets. Get parts in 3-5 days.",
+};
+
 export default function SheetMetalPage() {
-  return (
-    <div className="py-32 text-center">
-      <h1 className="text-5xl font-bold text-primary">Sheet Metal</h1>
-    </div>
-  );
+  return <CapabilitiesTemplate data={sheetMetalData} />;
 }

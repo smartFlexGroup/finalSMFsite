@@ -6,9 +6,9 @@ import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Stage, useGLTF, Loader } from '@react-three/drei';
 import { Maximize, Minimize, ArrowRight } from 'lucide-react';
 
-function Model() {
-  // Load the 24MB shark GLB model
-  const { scene } = useGLTF("/models/shark.glb");
+function Model({ modelPath = "/models/shark.glb" }: { modelPath?: string }) {
+  // Load the GLB model dynamically
+  const { scene } = useGLTF(modelPath);
   
   return (
     <Stage
@@ -22,7 +22,11 @@ function Model() {
   );
 }
 
-export default function PartViewer() {
+interface PartViewerProps {
+  modelPath?: string;
+}
+
+export default function PartViewer({ modelPath = "/models/shark.glb" }: PartViewerProps) {
   const [hasInteracted, setHasInteracted] = useState(false);
   const [isFullScreen, setIsFullScreen] = useState(false);
   const [mounted, setMounted] = useState(false);
@@ -85,7 +89,7 @@ export default function PartViewer() {
       >
         {/* Suspense with safe fallback - no img tags */}
         <Suspense fallback={null}>
-          <Model />
+          <Model modelPath={modelPath} />
         </Suspense>
         
         {/* OrbitControls for user interaction */}

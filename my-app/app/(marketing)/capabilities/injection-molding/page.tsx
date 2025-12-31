@@ -1,7 +1,11 @@
+import CapabilitiesTemplate from "@/components/capabilities/CapabilitiesTemplate";
+import { injectionMoldingData } from "@/components/capabilities/capabilities-data";
+
+export const metadata = {
+  title: "Injection Molding Services | SmartFlex Group",
+  description: "Rapid tooling and production molding for scalable plastic parts. Molds in 10-15 days.",
+};
+
 export default function InjectionMoldingPage() {
-  return (
-    <div className="py-32 text-center">
-      <h1 className="text-5xl font-bold text-primary">Injection Molding</h1>
-    </div>
-  );
+  return <CapabilitiesTemplate data={injectionMoldingData} />;
 }

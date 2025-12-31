@@ -3,7 +3,11 @@
 import PartViewer from '@/components/3d/PartViewer';
 import Link from 'next/link';
 
-export default function CtaBand() {
+interface CtaBandProps {
+  modelPath?: string;
+}
+
+export default function CtaBand({ modelPath }: CtaBandProps) {
   return (
     <section className="bg-primary py-24">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center px-6">
@@ -44,7 +48,7 @@ export default function CtaBand() {
         
         {/* Right Column - 3D Viewer */}
         <div className="flex items-center justify-center">
-          <PartViewer />
+          <PartViewer modelPath={modelPath} />
         </div>
         
       </div>

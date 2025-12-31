@@ -1,7 +1,11 @@
+import CapabilitiesTemplate from "@/components/capabilities/CapabilitiesTemplate";
+import { assemblyData } from "@/components/capabilities/capabilities-data";
+
+export const metadata = {
+  title: "Assembly & Integration Services | SmartFlex Group",
+  description: "Full electromechanical assembly, kitting, and hardware installation. ESD-safe facility with functional testing.",
+};
+
 export default function AssemblyPage() {
-  return (
-    <div className="py-32 text-center">
-      <h1 className="text-5xl font-bold text-primary">Assembly</h1>
-    </div>
-  );
+  return <CapabilitiesTemplate data={assemblyData} />;
 }

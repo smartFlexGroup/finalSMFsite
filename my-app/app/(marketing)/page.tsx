@@ -3,6 +3,7 @@ import TrustSignals from "@/components/sections/TrustSignals";
 import CapabilitiesGrid from "@/components/sections/CapabilitiesGrid";
 import PartnerShowcase from "@/components/sections/PartnerShowcase";
 import Workflow from "@/components/sections/Workflow";
+import AIPromo from "@/components/sections/AIPromo";
 import CtaBand from "@/components/sections/CtaBand";
 import IndustryShowcase from "@/components/sections/IndustryShowcase";
 import SmartStart from "@/components/sections/SmartStart";
@@ -15,6 +16,7 @@ export default function Home() {
       <CapabilitiesGrid />
       <PartnerShowcase />
       <Workflow />
+      <AIPromo />
       <CtaBand />
       <IndustryShowcase />
       <SmartStart />

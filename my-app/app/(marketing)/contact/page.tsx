@@ -1,8 +1,16 @@
+import ContactHero from "@/components/sections/contact/ContactHero";
+import ContactGrid from "@/components/sections/contact/ContactGrid";
+import GlobalLocations from "@/components/sections/contact/GlobalLocations";
+import ContactForm from "@/components/sections/contact/ContactForm";
+
 export default function ContactPage() {
   return (
-    <div className="pt-32 text-center">
-      <h1 className="text-4xl font-bold">Contact Us</h1>
-    </div>
+    <>
+      <ContactHero />
+      <ContactGrid />
+      <GlobalLocations />
+      <ContactForm />
+    </>
   );
 }
 
